@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Lato:wght@100;300&family=Poppins:wght@100;200;300;500&display=swap');
+
+
+:root{
+    --ff-primary: Poppins;
+
+
+    --clr-light:#F2E8B3;
+    --clr-dark:#000000;
+    --clr-accent1:#488C03;
+    --clr-accent2:#A6BF49;
+    --clr-accent3:#EFF294;
+    --clr-accent4:#F2E205;
+
+
+
+   
+}
+
+body{
+    margin:0;
+    background-color: var(--clr-light);
+}
+
+
+
+
+.header{
+    display: flex;
+    height: 30vh;
+    width: 100vw;
+    background-color: var(--clr-accent2);
+    font-family: var(--ff-primary);
+ 
+}
+
+#bookBtn{
+    height: 4em;
+    width: 8em;
+    font-family: var(--ff-primary);
+    background-color: var(--clr-accent3);
+    margin: 5%
+
+}
+
+.libraryHdr{
+    margin: 5%
+}
