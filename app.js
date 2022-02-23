@@ -6,7 +6,7 @@
 //theHobbit.info() "The Hobbit by J.R.R. Tolkien, 295 pages, not read yet"
 
 const bookObj = {
-    title: 'Harry Potter and the Sorceres Stone',
+    title: 'Harry Potter and the Sorcerers Stone',
     author: 'J.K. Rowling',
     pages: 300,
     readStatus: true
@@ -31,6 +31,33 @@ let myLibraryArr = []
 const BookButton = document.querySelector("#bookBtn"); 
 const bookCard = document.createElement('div')
 
+const userForm = document.createElement('form')
+userForm.setAttribute('id', "myForm")
+
+//append title field in form 
+const formTitleLabel = document.createElement('label')
+formTitleLabel.innerHTML = 'Book Title';
+userForm.appendChild(formTitleLabel)
+const userFormTitle = document.createElement('input')
+userFormTitle.setAttribute('type', 'text');
+
+
+//append author field in form 
+const userFormAuthor = document.createElement('input')
+userFormAuthor.setAttribute('type', 'text');
+const formAuthLabel = document.createElement('label')
+formAuthLabel.innerHTML = 'Author';
+
+
+//
+const formPagesLabel = document.createElement('label')
+formPagesLabel.innerHTML = 'Pages';
+
+const userFormPages = document.createElement('input')
+userFormPages.setAttribute('type', 'text');
+//
+const userFormReadStatus = document.createElement('input')
+
 BookButton.addEventListener( "click", addBookToLibrary)
 function addBookToLibrary(){
 /*bring up form to ask for user input details for new book*/
@@ -38,6 +65,12 @@ function addBookToLibrary(){
 //once the user hits submit, append the information to 
 bookCard.innerHTML = bookObj.title 
 document.body.appendChild(bookCard)
+document.body.appendChild(userForm)
+userForm.appendChild(userFormTitle); 
+userForm.appendChild(formAuthLabel)
+userForm.appendChild(userFormAuthor); 
+userForm.appendChild(formPagesLabel)
+userForm.appendChild(userFormPages); 
 console.log(bookObj.title)
 
 }
