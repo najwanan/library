@@ -56,3 +56,23 @@ body{
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
     font-family: var(--ff-primary);
 }
+
+#bookCard{
+
+    width: 10em;
+    height: 15em;
+    background-color: var(--clr-accent4);
+    padding: 5%;
+    margin: 5%;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    font-family: var(--ff-primary);
+
+}
+
+.subBtn{
+    background-color: var(--clr-accent1);
+    color: white;
+    width: 8.5em;
+    height: 2.5em;
+    margin: 6%;
+}
