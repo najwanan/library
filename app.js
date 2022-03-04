@@ -6,7 +6,7 @@
 
 //Global variables 
 
-let myLibraryArr = []
+let myLibrary = []
 
 
 const BookButton = document.querySelector("#bookBtn"); 
@@ -76,27 +76,31 @@ const bookObj = {
 BookButton.addEventListener( "click", createInputForm)
 submitButton.addEventListener("click", addBookToLibrary )
 
-function addBookToLibrary(){
+function addBookToLibrary(e){
 //once the user hits submit, append the information to card
 console.log('this function is running')
 
+    e.preventDefault();
 
-myLibraryArr.push({
+myLibrary.push({
     title: formTitleField.value,
     author: formAuthField.value,
     pages: formPagesField.value
 })
+    
+    console.log(myLibrary)
+    userForm.reset();
+    makeBookCard();
 
 }
 
 function makeBookCard(){
     document.body.appendChild(bookCard)
-    bookCard.innerHTML = bookObj.title + " " + bookObj.author + " " + bookObj.pages
+    bookCard.innerHTML = myLibrary.title + " " + myLibrary.author + " " + myLibrary.pages
     //write logic in here to loop through my library array and display each object on it's own card 
     //for (i=0, i<myLibraryArr.lenght, i++){ bookCardinnerhtml = myLibraryArr[i]}
   
-
 }
 
-makeBookCard();
+
 
