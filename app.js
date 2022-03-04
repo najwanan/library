@@ -28,6 +28,9 @@ const formPagesField = document.createElement('input')
 const userFormReadStatus = document.createElement('input')
 const submitButton = document.createElement('button')
 
+const formReadBox = document.createElement('label')
+const formReadStatus = document.createElement('input')
+
 
 function createInputForm(){
 
@@ -59,17 +62,11 @@ function createInputForm(){
     submitButton.setAttribute('class', 'subBtn')
     submitButton.innerText = "submit"
     userForm.appendChild(submitButton)
+ 
 
 }
 
 
-const bookObj = {
-    key: 01, 
-    title: 'Harry Potter and the Sorcerers Stone',
-    author: 'J.K. Rowling',
-    pages: 300,
-    readStatus: true
-};
 
 
 //event listener triggers form display with inputs for title, author, pages and checkbox for read
@@ -82,11 +79,13 @@ console.log('this function is running')
 
     e.preventDefault();
 
-myLibrary.push({
-    title: formTitleField.value,
-    author: formAuthField.value,
-    pages: formPagesField.value
-})
+    const bookObj = {
+      title: formTitleField.value,
+      author: formAuthField.value,
+      pages: formPagesField.value,
+    };
+
+    myLibrary.push(bookObj)
     
     console.log(myLibrary)
     userForm.reset();
@@ -96,7 +95,13 @@ myLibrary.push({
 
 function makeBookCard(){
     document.body.appendChild(bookCard)
-    bookCard.innerHTML = myLibrary.title + " " + myLibrary.author + " " + myLibrary.pages
+    bookCard.textContent = JSON.stringify(myLibrary);
+
+    formReadStatus.innerHTML = "Read";
+    formReadBox.setAttribute("type", "checkbox");
+    document.body.appendChild(formReadStatus);
+    document.body.appendChild(formReadBox)
+    //myLibrary.title + " " + myLibrary.author + " " + myLibrary.pages
     //write logic in here to loop through my library array and display each object on it's own card 
     //for (i=0, i<myLibraryArr.lenght, i++){ bookCardinnerhtml = myLibraryArr[i]}
   
