@@ -108,7 +108,8 @@ function makeBookCard(myLibrary){
         //const card = document.createElement("div");
     const content = `<li> Author: ${book.title}</li> 
                      <li> Title: ${book.author}</li> 
-                     <li> Pages: ${book.pages}</li>`;
+                     <li> Pages: ${book.pages}</li>
+                     <button>Delete</button>`;
         //let booktitle = document.createTextNode("Title:" + " " + book.title);
         bookCard.innerHTML = content;
         //bookCard.appendChild(card);
