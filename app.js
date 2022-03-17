@@ -30,6 +30,8 @@ const submitButton = document.createElement('button')
 const formReadBox = document.createElement('label')
 const formReadStatus = document.createElement('input')
 
+const deleteButton = document.querySelector('#deleteBtn')
+
 
 
 function createInputForm(){
@@ -74,7 +76,8 @@ function createInputForm(){
 
 //event listener triggers form display with inputs for title, author, pages and checkbox for read
 BookButton.addEventListener( "click", createInputForm)
-submitButton.addEventListener("click", addBookToLibrary )
+submitButton.addEventListener("click", addBookToLibrary)
+deleteButton.addEventListener("click", clearBookCard)
 
 function addBookToLibrary(e){
 //once the user hits submit, append the information to card
@@ -100,16 +103,18 @@ function addBookToLibrary(e){
 //function format({ title, author, pages, read }) {
   //  return `<li> ${title} ${author}</li>`;} 
 
-function makeBookCard(myLibrary){
+function makeBookCard(myLibrary) {
+ 
+  bookCard.innerHTML = ""
+  //write line to clear contents of document then reappend for each book 
   myLibrary.forEach((book, i) => {
-      
     const bookCard = document.createElement("div");
     bookCard.setAttribute("id", "bookCard");
         //const card = document.createElement("div");
     const content = `<li> Author: ${book.title}</li> 
                      <li> Title: ${book.author}</li> 
                      <li> Pages: ${book.pages}</li>
-                     <button>Delete</button>`;
+                     <button id= "deleteBtn">Delete</button>`;
         //let booktitle = document.createTextNode("Title:" + " " + book.title);
         bookCard.innerHTML = content;
         //bookCard.appendChild(card);
@@ -119,3 +124,9 @@ function makeBookCard(myLibrary){
 }
 
 
+//function to delete book card 
+
+function clearBookCard() {
+  console.log("you selected the delete button")
+  
+}

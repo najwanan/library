@@ -76,3 +76,16 @@ body{
     height: 2.5em;
     margin: 6%;
 }
+
+#deleteBtn{
+      background-color: var(--clr-accent1);
+    color: white;
+    width: 8.5em;
+    height: 2.5em;
+    margin: 6%;
+
+}
+
+li{
+    text-decoration: none;
+}
