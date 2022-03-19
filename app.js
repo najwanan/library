@@ -77,7 +77,7 @@ function createInputForm(){
 //event listener triggers form display with inputs for title, author, pages and checkbox for read
 BookButton.addEventListener( "click", createInputForm)
 submitButton.addEventListener("click", addBookToLibrary)
-deleteButton.addEventListener("click", clearBookCard)
+
 
 function addBookToLibrary(e){
 //once the user hits submit, append the information to card
@@ -105,14 +105,14 @@ function addBookToLibrary(e){
 
 function makeBookCard(myLibrary) {
  
-  bookCard.innerHTML = ""
+  
   //write line to clear contents of document then reappend for each book 
   myLibrary.forEach((book, i) => {
     const bookCard = document.createElement("div");
     bookCard.setAttribute("id", "bookCard");
         //const card = document.createElement("div");
-    const content = `<li> Author: ${book.title}</li> 
-                     <li> Title: ${book.author}</li> 
+    const content = `<li> Author: ${book.author}</li> 
+                     <li> Title: ${book.title}</li> 
                      <li> Pages: ${book.pages}</li>
                      <button id= "deleteBtn">Delete</button>`;
         //let booktitle = document.createTextNode("Title:" + " " + book.title);
@@ -123,7 +123,7 @@ function makeBookCard(myLibrary) {
     })
 }
 
-
+deleteButton.addEventListener("click", clearBookCard);
 //function to delete book card 
 
 function clearBookCard() {
