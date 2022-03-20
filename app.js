@@ -12,18 +12,20 @@ const BookButton = document.querySelector("#bookBtn");
 
 const userForm = document.createElement('form')
 
+const libraryBody = document.querySelector(".libraryContainer");
+
 userForm.setAttribute('id', "myForm");
 
-
+//Book Title 
 const formTitleLabel = document.createElement('label')
 const formTitleField = document.createElement('input')
-
+//Author
 const formAuthField = document.createElement('input')
 const formAuthLabel = document.createElement('label')
-
+//Num of Pages
 const formPagesLabel = document.createElement('label')
 const formPagesField = document.createElement('input')
-
+//Read Status toggle
 const userFormReadStatus = document.createElement('input')
 const submitButton = document.createElement('button')
 
@@ -104,7 +106,7 @@ function addBookToLibrary(e){
   //  return `<li> ${title} ${author}</li>`;} 
 
 function makeBookCard(myLibrary) {
- 
+  libraryBody.innerHTML = "";
   
   //write line to clear contents of document then reappend for each book 
   myLibrary.forEach((book, i) => {
@@ -118,12 +120,12 @@ function makeBookCard(myLibrary) {
         //let booktitle = document.createTextNode("Title:" + " " + book.title);
         bookCard.innerHTML = content;
         //bookCard.appendChild(card);
-        document.body.appendChild(bookCard)
+        libraryBody.appendChild(bookCard)
         console.log(book.title, book.author, book.pages, book.read)
     })
 }
 
-deleteButton.addEventListener("click", clearBookCard);
+//deleteButton.addEventListener("click", clearBookCard);
 //function to delete book card 
 
 function clearBookCard() {
