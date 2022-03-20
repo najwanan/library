@@ -88,4 +88,14 @@ body{
 
 li{
     text-decoration: none;
+    list-style-type: none;
+}
+
+.libraryContainer{
+    height: auto;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
