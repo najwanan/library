@@ -117,6 +117,7 @@ function makeBookCard(myLibrary) {
                     <li> Author: ${book.author}</li> 
                      <li> Title: ${book.title}</li> 
                      <li> Pages: ${book.pages}</li>
+                     <li> Read: ${book.read}</li>
                      <button id= "deleteBtn">Delete</button>
                      `;
         //let booktitle = document.createTextNode("Title:" + " " + book.title);
