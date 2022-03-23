@@ -96,9 +96,9 @@ class Book{
   }
 
   //add method to toggle read status
-  /*toggleRead(readStatus) {
+  toggleRead(readStatus) {
     this.read = readStatus;
-  }*/
+  }
 };
 
 function addBookToLibrary(e){
@@ -109,7 +109,7 @@ function addBookToLibrary(e){
   const bookObj = new Book(
       formTitleField.value,
       formAuthField.value,
-     formPagesField.value,
+      formPagesField.value,
       userFormReadStatus.value
       
     )
@@ -138,7 +138,7 @@ function makeBookCard(myLibrary) {
                     <li> Author: ${book.author}</li> 
                      <li> Title: ${book.title}</li> 
                      <li> Pages: ${book.pages}</li>
-                     <li> Read: ${book.read}</li>
+                     <input type = "checkbox"> Read: ${book.read}</input>
                      <button id= "deleteBtn">Delete</button>
                      `;
         //let booktitle = document.createTextNode("Title:" + " " + book.title);
