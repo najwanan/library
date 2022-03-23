@@ -63,7 +63,9 @@ function createInputForm(){
     userForm.appendChild(formPagesField); 
 
     formReadBox.innerHTML = "Read";
-    userFormReadStatus.setAttribute('type', 'checkbox')
+  userFormReadStatus.setAttribute('type', 'checkbox')
+  userFormReadStatus.setAttribute('value', 'No')
+
 
     userForm.appendChild(userFormReadStatus);
     userForm.appendChild(formReadBox);
@@ -79,7 +81,12 @@ function createInputForm(){
 //event listener triggers form display with inputs for title, author, pages and checkbox for read
 BookButton.addEventListener( "click", createInputForm)
 submitButton.addEventListener("click", addBookToLibrary)
+formReadStatus.addEventListener("click", changeReadStatus)
 
+function changeReadStatus() {
+  Book.toggleRead('Yes')
+  console.log("readstatus function activated")
+}
 
 class Book{
   constructor(
@@ -97,6 +104,7 @@ class Book{
 
   //add method to toggle read status
   toggleRead(readStatus) {
+   
     this.read = readStatus;
   }
 };
