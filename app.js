@@ -87,13 +87,19 @@ class Book{
     author, 
     pages, 
     read
-  )
+  ) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages; 
+    this.read = read;
+
+  }
 
   //add method to toggle read status
-  toggleRead(readStatus) {
+  /*toggleRead(readStatus) {
     this.read = readStatus;
-  }
-}
+  }*/
+};
 
 function addBookToLibrary(e){
 //once the user hits submit, append the information to card
@@ -108,8 +114,6 @@ function addBookToLibrary(e){
       
     )
      
-  
-
 
     myLibrary.push(bookObj)
     makeBookCard(myLibrary);
@@ -144,9 +148,7 @@ function makeBookCard(myLibrary) {
         console.log(book.title, book.author, book.pages, book.read)
     })
 }
-if (){
-  deleteButton.addEventListener("click", clearBookCard);
-}
+
 
 //function to delete book card 
 
