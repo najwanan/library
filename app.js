@@ -81,17 +81,34 @@ BookButton.addEventListener( "click", createInputForm)
 submitButton.addEventListener("click", addBookToLibrary)
 
 
+class Book{
+  constructor(
+    title, 
+    author, 
+    pages, 
+    read
+  )
+
+  //add method to toggle read status
+  toggleRead(readStatus) {
+    this.read = readStatus;
+  }
+}
+
 function addBookToLibrary(e){
 //once the user hits submit, append the information to card
     e.preventDefault();
 
 
-    const bookObj = {
-      title: formTitleField.value,
-      author: formAuthField.value,
-      pages: formPagesField.value,
-      read: userFormReadStatus.value
-    };
+  const bookObj = new Book(
+      formTitleField.value,
+      formAuthField.value,
+     formPagesField.value,
+      userFormReadStatus.value
+      
+    )
+     
+  
 
 
     myLibrary.push(bookObj)
@@ -127,8 +144,10 @@ function makeBookCard(myLibrary) {
         console.log(book.title, book.author, book.pages, book.read)
     })
 }
+if (){
+  deleteButton.addEventListener("click", clearBookCard);
+}
 
-deleteButton.addEventListener("click", clearBookCard);
 //function to delete book card 
 
 function clearBookCard() {
