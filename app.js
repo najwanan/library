@@ -155,6 +155,13 @@ function makeBookCard(myLibrary) {
         libraryBody.appendChild(bookCard)
         console.log(book.title, book.author, book.pages, book.read)
     })
+};
+
+const deleteBook = () => {
+  if (deleteButton != null) {
+    deleteButton.addEventListener;
+  }
+  
 }
 
 
