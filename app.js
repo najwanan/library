@@ -9,7 +9,7 @@
 let myLibrary = []
 
 const BookButton = document.querySelector("#bookBtn"); 
-
+const deleteButton = document.querySelector("#deleteBtn");
 const userForm = document.createElement('form')
 
 const libraryBody = document.querySelector(".libraryContainer");
@@ -31,9 +31,6 @@ const submitButton = document.createElement('button')
 
 const formReadBox = document.createElement('label')
 const formReadStatus = document.createElement('input')
-
-const deleteButton = document.querySelector('#deleteBtn')
-
 
 
 function createInputForm(){
@@ -157,17 +154,28 @@ function makeBookCard(myLibrary) {
     })
 };
 
-const deleteBook = () => {
-  if (deleteButton != null) {
-    deleteButton.addEventListener;
+
+if (deleteButton) {
+    console.log("this button is here")
+    deleteButton.addEventListener("click", clearBookCard);
   }
   
-}
 
 
 //function to delete book card 
+//use set Interval to check for mutations every x seconds or write a mutation callback function
 
 function clearBookCard() {
   console.log("you selected the delete button")
   
 }
+
+//adding event delegation for delete button and for read checkbox 
+
+document.addEventListener('click', function (e) {
+  if (e.target && e.target.id == 'deleteBtn') {
+    console.log('this is event delegation');
+    const BookCard = document.querySelector('#bookCard')
+    BookCard.remove();
+  }
+});
