@@ -36,9 +36,24 @@ const formReadStatus = document.createElement('input')
 function createInputForm(){
 
   
-    document.body.appendChild(userForm)
+  document.body.appendChild(userForm)
 
-    //append title field in form 
+  const formContent = `
+    <label>Book Title</label>
+    <input type = "text">
+    <label>Author</label>
+    <input type = "text">
+    <label>Pages</label>
+    <input type = "text">
+    <input type = "checkbox" value = "no" id="readStatus">
+    <label>Read</label>
+    <button class = 'subBtn'>submit</button>
+
+  `;
+
+  userForm.innerHTML = formContent
+  
+    /*//append title field in form 
     formTitleLabel.innerHTML = 'Book Title';
     formTitleField.setAttribute('type', 'text');
     userForm.appendChild(formTitleLabel);
@@ -60,8 +75,9 @@ function createInputForm(){
     userForm.appendChild(formPagesField); 
 
     formReadBox.innerHTML = "Read";
-  userFormReadStatus.setAttribute('type', 'checkbox')
-  userFormReadStatus.setAttribute('value', 'No')
+    userFormReadStatus.setAttribute('type', 'checkbox')
+    userFormReadStatus.setAttribute('value', 'No')
+    userFormReadStatus.setAttribute('id', 'readStatus')
 
 
     userForm.appendChild(userFormReadStatus);
@@ -70,7 +86,7 @@ function createInputForm(){
     //submit button 
     submitButton.setAttribute('class', 'subBtn')
     submitButton.innerText = "submit"
-    userForm.appendChild(submitButton)
+    userForm.appendChild(submitButton)*/
  
 }
 
@@ -180,4 +196,11 @@ document.addEventListener('click', function (e) {
   }
 });
 
+
 //Tasks 1. use event delegation to toggle read checkbox status within object. 2. Implement ID for each bookcard so that correct bookCards get deleted
+
+document.addEventListener('input', function (e) {
+  if (e.target && e.target.id == 'readStatus') {
+    console.log("the read status has been changed")
+  }
+})
