@@ -17,7 +17,7 @@ const libraryBody = document.querySelector(".libraryContainer");
 userForm.setAttribute('id', "myForm");
 
 //Book Title 
-const formTitleLabel = document.createElement('label')
+/*const formTitleLabel = document.createElement('label')
 const formTitleField = document.createElement('input')
 //Author
 const formAuthField = document.createElement('input')
@@ -27,10 +27,16 @@ const formPagesLabel = document.createElement('label')
 const formPagesField = document.createElement('input')
 //Read Status toggle
 const userFormReadStatus = document.createElement('input')
-const submitButton = document.createElement('button')
+const submitButton = document.createElement('button')*/
 
 const formReadBox = document.createElement('label')
 const formReadStatus = document.createElement('input')
+
+ const formTitleField = document.querySelector('#titleField')
+  const formAuthField = document.querySelector("#authorField");
+  const formPagesField = document.querySelector("#pagesField");
+  const userFormReadStatus = document.querySelector('#readStatus')
+  const submitButton = document.querySelector("#subBtnID");
 
 
 function createInputForm(){
@@ -40,14 +46,14 @@ function createInputForm(){
 
   const formContent = `
     <label>Book Title</label>
-    <input type = "text">
+    <input type = "text" id="titleField">
     <label>Author</label>
-    <input type = "text">
+    <input type = "text" id="authorField">
     <label>Pages</label>
-    <input type = "text">
+    <input type = "text" id="pagesField">
     <input type = "checkbox" value = "no" id="readStatus">
     <label>Read</label>
-    <button class = 'subBtn'>submit</button>
+    <button class = 'subBtn' id= 'subBtnID'>submit</button>
 
   `;
 
@@ -93,8 +99,16 @@ function createInputForm(){
 
 //event listener triggers form display with inputs for title, author, pages and checkbox for read
 BookButton.addEventListener( "click", createInputForm)
-submitButton.addEventListener("click", addBookToLibrary)
+//submitButton.addEventListener("click", addBookToLibrary)
 formReadStatus.addEventListener("click", changeReadStatus)
+
+
+document.addEventListener("click", function (e) {
+  if (e.target && e.target.id == "subBtn") {
+    console.log("submit button was clicked")
+       addBookToLibrary()
+  }
+});
 
 function changeReadStatus() {
   Book.toggleRead('Yes')
