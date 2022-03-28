@@ -179,3 +179,5 @@ document.addEventListener('click', function (e) {
     BookCard.remove();
   }
 });
+
+//Tasks 1. use event delegation to toggle read checkbox status within object. 2. Implement ID for each bookcard so that correct bookCards get deleted
